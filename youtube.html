@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube</title>
+        <link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet">
+        <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+        <!-- <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script> -->
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <nav>
+            <a href="youtube.html">Youtube</a>
+            &nbsp;
+            <a href="vimeo.html">Vimeo</a>
+            &nbsp;
+            <a href="dailymotion.html">Dailymotion</a>
+            &nbsp;
+            <a href="custom-video.html">Custom</a>
+        </nav>
+        <h1>Youtube Video</h1>
+        <video
+            id="vid1"
+            class="video-js vjs-default-skin vjs-big-play-centered"
+            controls
+            autoplay
+            width="640"
+            height="400"
+            muted
+            data-setup='{ "techOrder": ["youtube"], "sources": [{ "type": "video/youtube", "src": "https://www.youtube.com/watch?v=CeSAjK2CBEA"}], "youtube": { "customVars": { "wmode": "transparent" } } }'
+        ></video>
+        <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+        <script src="js/Youtube.min.js"></script>
+        <script>
+            const vidBlock = document.getElementById("vid1");
+            const clickPlay = () => {
+                vidBlock.muted = !vidBlock.muted;
+                vidBlock.play();
+                console.log("clicked")
+            }
+        </script>
+    </body>
+</html>
